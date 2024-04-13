@@ -14,7 +14,7 @@ from pyrogram.types import (
 from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import OWNER_ID, Muntazer
+from config import OWNER_ID, Slidar
 
 @app.on_message(filters.command("نادي المطور", [".", ""]) & filters.group)
 async def call_dev(client: Client, message: Message):
@@ -38,8 +38,8 @@ async def call_dev(client: Client, message: Message):
                                      reply_markup=reply_markup)
 
     # إنشاء زر "اونلاين"
-    online_button = InlineKeyboardButton("< freedom >", url=f"https://t.me/{Muntazer}")
+    online_button = InlineKeyboardButton(". SLiDaR .", url=f"https://t.me/{Slidar}")
     
-    await message.reply_text(f"~ **تم إرسال النداء إلى مطور البوت\n\n-› Master -› @{Muntazer} .",
+    await message.reply_text(f"~ **تم إرسال النداء إلى مطور البوت\n\n-› SLDaR -› @Q_z_T .",
                              disable_web_page_preview=True,
                              reply_markup=InlineKeyboardMarkup([[online_button]]))
