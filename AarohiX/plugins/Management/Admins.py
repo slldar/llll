@@ -39,17 +39,17 @@ async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, t
     try:
         await app.ban_chat_member(chat_id, user_id)
     except ChatAdminRequired:
-        msg_text = "Ban rights? Nah, I'm just here for the digital high-fives 🙌\nGive me ban rights! 😡🥺"
+        msg_text = "- ممعيش حقوق الحظر . /n - اعطيني حقوق الحظر  ."
         return msg_text, False
     except UserAdminInvalid:
-        msg_text = "I wont ban an admin bruh!!"
+        msg_text = "- معرفش احظر المشرف  ."
         return msg_text, False
     except Exception as e:
         if user_id == 6711389550:
-            msg_text = "why should i ban myself? sorry but I'm not stupid like you"
+            msg_text = "- معرفش احظر نفسي انا مش غبي زيك  ."
             return msg_text, False
         
-        msg_text = f"opps!!\n{e}"
+        msg_text = f"انتبه\n{e}"
         return msg_text, False
 
     user_mention = mention(user_id, first_name)
@@ -70,10 +70,10 @@ async def unban_user(user_id, first_name, admin_id, admin_name, chat_id):
     try:
         await app.unban_chat_member(chat_id, user_id)
     except ChatAdminRequired:
-        msg_text = "Ban rights? Nah, I'm just here for the digital high-fives 🙌\nGive me ban rights! 😡🥺"
+        msg_text = "- ممعيش حقوق الحظر . /n - اعطيني حقوق الحظر  ."
         return msg_text
     except Exception as e:
-        msg_text = f"opps!!\n{e}"
+        msg_text = f"انتبه\n{e}"
         return msg_text
 
     user_mention = mention(user_id, first_name)
@@ -92,17 +92,17 @@ async def mute_user(user_id, first_name, admin_id, admin_name, chat_id, reason, 
         else:
             await app.restrict_chat_member(chat_id, user_id, ChatPermissions())
     except ChatAdminRequired:
-        msg_text = "Mute rights? Nah, I'm just here for the digital high-fives 🙌\nGive me mute rights! 😡🥺"
+        msg_text = "- ممعيش حقوق الكتم . /n - اعطيني حقوق الكتم  ."
         return msg_text, False
     except UserAdminInvalid:
-        msg_text = "I wont mute an admin bruh!!"
+        msg_text = "- معرفش اكتم المشرف  ."
         return msg_text, False
     except Exception as e:
         if user_id == 6664582540:
-            msg_text = "why should i mute myself? sorry but I'm not stupid like you"
+            msg_text = "- ازاي اكتم نفسي ؟ /n - انا مش غبي لدرجة دي  ."
             return msg_text, False
         
-        msg_text = f"opps!!\n{e}"
+        msg_text = f"انتبه\n{e}"
         return msg_text, False
 
     user_mention = mention(user_id, first_name)
